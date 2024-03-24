@@ -1,5 +1,13 @@
 #ifndef SHAPE_H
 #define SHAPE_H 0
+
+//define Pi 
+#ifndef M_PI
+ #define M_PI 3.14159265358979323846
+#endif
+
+
+#include <stdint.h>
 #include <math.h>
 #include <SFML/Graphics/Color.h>
 #include <SFML/System/Vector2.h>
@@ -30,10 +38,11 @@ struct agentShape{
     sfColor color;
     int radius;
     sfCircleShape* circle;
+    sfRectangleShape* rectangle;
 };
 
 typedef struct agentShape agentShape ;
 
-agentShape* initializeShape(sfColor color, int radius, sfVector2f position);
+agentShape* initializeShape(sfColor color, int radius, sfVector2f position, float direction);
 
 #endif

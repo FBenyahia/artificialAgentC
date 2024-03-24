@@ -2,12 +2,30 @@
 #include "shape.h"
 #include <SFML/Graphics/CircleShape.h>
 #include <SFML/Graphics/Color.h>
+#include <SFML/Graphics/RectangleShape.h>
 #include <SFML/System/Vector2.h>
+#include <math.h>
 #include <stdlib.h>
 
-void rotate(Agent* agent, double tick){
 
-    agent->direction+= agent->angularSpeed*tick;
+void move(Agent* agent){
+    sfVector2f vec = {agent->speed * cos(agent->direction*2*M_PI/180), agent->speed * sin(agent->direction*2*M_PI/180)};                 
+    sfCircleShape_move(agent->shape->circle, vec);
+    sfRectangleShape_move(agent->shape->rectangle, vec);
+}
+
+void rotateLeft(Agent* agent){
+
+    agent->direction-= agent->angularSpeed;
+    if (agent->direction>360){
+        agent->direction -=360;
+    }
+}
+
+
+void rotateRight(Agent* agent){
+
+    agent->direction+= agent->angularSpeed;
     if (agent->direction>360){
         agent->direction -=360;
     }
@@ -26,13 +44,15 @@ Agent* initializeAgent(double positionX, double positionY, double direction, dou
     sfColor color;
     if (type==0) color= sfGreen;
     else if (type==1) color = sfRed;
+    else color = sfBlack;
     int radius = width/2;
-    agent->shape = initializeShape(color, radius, agent->position);
+    agent->shape = initializeShape(color, radius, agent->position, agent->direction);
     return agent;
 }
 
 void freeAgent(Agent* agent){
     sfCircleShape_destroy(agent->shape->circle);
+    sfRectangleShape_destroy(agent->shape->rectangle);
     free(agent->shape);
     free(agent);
 }

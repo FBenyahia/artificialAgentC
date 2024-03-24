@@ -2,6 +2,7 @@
 #define AGENT_H 0
 
 #include "shape.h"
+#include <stdint.h>
 
 
 
@@ -18,7 +19,9 @@ struct Agent {
 
 typedef struct Agent Agent;
 
-void rotate(Agent* agent, double tick);
+void move(Agent* agent);
+void rotateLeft(Agent* agent);
+void rotateRight(Agent* agent);
 
 Agent* initializeAgent(double positionX, double positionY, double direction, double angularSpeed, double speed, int width, int height,int type);
 void freeAgent(Agent* agent);
