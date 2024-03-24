@@ -1,19 +1,5 @@
 #include "agent.h"
-#include <SFML/Config.h>
-#include <SFML/Graphics/CircleShape.h>
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/RectangleShape.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Shape.h>
-#include <SFML/Graphics/Text.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/Graphics/View.h>
-#include <SFML/System/Clock.h>
-#include <SFML/System/Time.h>
-#include <SFML/System/Types.h>
-#include <SFML/System/Vector2.h>
-#include <SFML/Window/Keyboard.h>
-#include <stdio.h>
+
 
 int main(){
 

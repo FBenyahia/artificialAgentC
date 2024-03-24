@@ -1,11 +1,5 @@
 #include "agent.h"
-#include "shape.h"
-#include <SFML/Graphics/CircleShape.h>
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/RectangleShape.h>
-#include <SFML/System/Vector2.h>
-#include <math.h>
-#include <stdlib.h>
+
 
 
 void move(Agent* agent){

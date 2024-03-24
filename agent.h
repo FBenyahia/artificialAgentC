@@ -2,7 +2,6 @@
 #define AGENT_H 0
 
 #include "shape.h"
-#include <stdint.h>
 
 
 

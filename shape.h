@@ -8,12 +8,12 @@
 
 
 #include <stdint.h>
-#include <math.h>
-#include <SFML/Graphics/Color.h>
-#include <SFML/System/Vector2.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
+#include <SFML/Graphics/Color.h>
+#include <SFML/System/Vector2.h>
 #include <SFML/Graphics.h>
 #include <SFML/System/Clock.h>
 #include <SFML/System/Time.h>
@@ -31,9 +31,9 @@
 #include <SFML/Window/Event.h>
 #include <SFML/Window/VideoMode.h>
 #include <SFML/Window/Window.h>
-
-
 #include <SFML/Graphics/Color.h>
+
+
 struct agentShape{
     sfColor color;
     int radius;
